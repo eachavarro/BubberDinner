@@ -1,3 +1,5 @@
+using BubberDinner.Application.Common.Interfaces.Persistance;
+using BubberDinner.Infrastructure.Persistance;
 using BuberDinner.Application.Common.Interfaces.Authentication;
 using BuberDinner.Application.Common.Interfaces.Services;
 using BuberDinner.Infrastructure.Authentication;
@@ -15,6 +17,8 @@ public static class DependencyInjection{
         services.Configure<JwtSettings>(configuration.GetSection(JwtSettings.SECTIONNAME));
         services.AddSingleton<IJwtTokenGenerator, JwtTokenGenerator>();
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+
+        services.AddScoped<IUserRepository, UserRepository>();
         return services;
     }
 }

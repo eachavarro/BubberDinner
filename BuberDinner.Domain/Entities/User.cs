@@ -1,7 +1,7 @@
 namespace BubberDinner.Domain.Entities;
 
 public class User{
-    public Guid Id { get; set; } = new Guid();
+    public Guid Id { get; init; } =  Guid.NewGuid();
     public string? FirstName { get; set; }
 
     public string? LastName { get; set; }
