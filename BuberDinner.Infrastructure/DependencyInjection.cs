@@ -1,5 +1,5 @@
-using BubberDinner.Application.Common.Interfaces.Persistance;
-using BubberDinner.Infrastructure.Persistance;
+using BuberDinner.Application.Common.Interfaces.Persistance;
+using BuberDinner.Infrastructure.Persistance;
 using BuberDinner.Application.Common.Interfaces.Authentication;
 using BuberDinner.Application.Common.Interfaces.Services;
 using BuberDinner.Infrastructure.Authentication;

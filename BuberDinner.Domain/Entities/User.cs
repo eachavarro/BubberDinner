@@ -1,4 +1,4 @@
-namespace BubberDinner.Domain.Entities;
+namespace BuberDinner.Domain.Entities;
 
 public class User{
     public Guid Id { get; init; } =  Guid.NewGuid();
