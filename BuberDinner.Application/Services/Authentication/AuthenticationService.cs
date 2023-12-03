@@ -25,14 +25,11 @@ public class AuthenticationService : IAuthenticationService
             throw new Exception("Password is not correct");
         }
 
-        var token = _jwtTokenGenerator.GenerateToken(user.Id, user.FirstName, user.LastName);
+        var token = _jwtTokenGenerator.GenerateToken(user);
 
 
         return new AuthenticationResult (
-            user.Id, 
-            user.FirstName, 
-            user.LastName, 
-            email, 
+            user, 
             token);
     }
 
@@ -54,14 +51,11 @@ public class AuthenticationService : IAuthenticationService
         _userRepository.Add(user);
         //3 Create token
         
-        var token = _jwtTokenGenerator.GenerateToken(user.Id, firstName, lastName);
+        var token = _jwtTokenGenerator.GenerateToken(user);
 
         
         return new AuthenticationResult(
-            user.Id, 
-            user.FirstName, 
-            user.LastName, 
-            user.Email, 
+            user, 
             token
         );
     }

@@ -21,10 +21,16 @@ public class AuthenticationController : ControllerBase
     {
         var result = _authenticationService.Register(registerRequest.FirstName,
                         registerRequest.LastName,
-                        registerRequest.EMail,
+                        registerRequest.Email,
                         registerRequest.Password);
 
-        var response = new AuthenticationResponse(result.Id, result.FirstName, result.LastName, result.Email, result.Token);
+        var response = new AuthenticationResponse(
+            result.User.Id, 
+            result.User.FirstName, 
+            result.User.LastName, 
+            result.User.Email, 
+            result.Token
+        );
 
         return Ok(response);
     }
@@ -35,7 +41,14 @@ public class AuthenticationController : ControllerBase
         var result = _authenticationService.Login(loginRequest.EMail,
         loginRequest.Password);
 
-        var response = new AuthenticationResponse(result.Id, result.FirstName, result.LastName, result.Email, result.Token);
+        var response = new AuthenticationResponse(
+            result.User.Id, 
+            result.User.FirstName, 
+            result.User.LastName, 
+            result.User.Email, 
+            result.Token
+        );
+
         return Ok(response);
     }
     
