@@ -38,5 +38,5 @@ public class AuthenticationController : ControllerBase
         var response = new AuthenticationResponse(result.Id, result.FirstName, result.LastName, result.Email, result.Token);
         return Ok(response);
     }
-
+    
 }
